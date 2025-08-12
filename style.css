@@ -1,4 +1,4 @@
-/* style.css */
+/* style.css (更新版) */
 
 /* 全体の設定 */
 body {
@@ -26,7 +26,7 @@ header .unofficial-notice {
     color: #ccc;
 }
 
-/* メインコンテンツ */
+/* メインコンテンツの基本スタイルと【動き①】フェードインアニメーション */
 main {
     width: 90%;
     max-width: 960px;
@@ -35,6 +35,9 @@ main {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* ↓ここからアニメーション設定 */
+    opacity: 0; /* 最初は透明 */
+    animation: fadeIn 0.8s ease-out forwards; /* 0.8秒かけて表示 */
 }
 
 /* Vライバー一覧（TOPページ） */
@@ -52,10 +55,11 @@ main {
     text-align: center;
     padding: 1.5rem;
     transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; /* 画像がはみ出さないように */
 }
 .liver-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 .liver-card img {
     width: 150px;
@@ -64,7 +68,13 @@ main {
     object-fit: cover;
     border: 3px solid #fff;
     box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease; /* 【動き②】ズームのアニメーション速度 */
 }
+/* 【動き②】カードにホバーした時に画像をズームさせる */
+.liver-card:hover img {
+    transform: scale(1.1);
+}
+
 .liver-card h3 {
     margin: 1rem 0 0.5rem;
 }
@@ -83,23 +93,25 @@ main {
     background: #e9546b; /* ホバー時の色 */
 }
 
-
 /* Vライバー個別ページ */
 .liver-profile {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
+    flex-wrap: wrap; /* スマホ表示などで折り返すように */
 }
 .liver-visual {
     flex: 1;
+    min-width: 250px; /* 横幅の最小値を指定 */
     text-align: center;
+}
+.liver-details {
+    flex: 2;
+    min-width: 300px; /* 横幅の最小値を指定 */
 }
 .liver-visual img {
     max-width: 100%;
     border-radius: 8px;
-}
-.liver-details {
-    flex: 2;
 }
 .liver-details h2 {
     border-bottom: 2px solid #e9546b;
@@ -130,14 +142,19 @@ main {
     margin: 0 0.5rem;
     border-radius: 8px;
     font-size: 1rem;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.1s;
 }
 .social-links a:hover {
     opacity: 0.8;
 }
+/* ボタンを押したときに少し沈む動き */
+.social-links a:active {
+    transform: translateY(2px);
+}
 .link-x { background-color: #1DA1F2; }
 .link-youtube { background-color: #FF0000; }
 .link-instagram { background-color: #C13584; }
+
 
 /* フッター */
 footer {
@@ -146,4 +163,52 @@ footer {
     margin-top: 2rem;
     font-size: 0.9rem;
     color: #777;
+}
+
+/* ▼▼▼【動き】を定義するコード（ここから下を追記）▼▼▼ */
+
+/* 【動き①】ページ全体のフェードイン */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 【動き③】個別ページの要素を左からスライドイン */
+.slide-in-left {
+    opacity: 0;
+    animation: slideInFromLeft 0.7s ease-out 0.3s forwards;
+    /* 0.3s遅れてアニメーション開始 */
+}
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 【動き③】個別ページの要素を右からスライドイン */
+.slide-in-right {
+    opacity: 0;
+    animation: slideInFromRight 0.7s ease-out 0.5s forwards;
+    /* 0.5s遅れてアニメーション開始 */
+}
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
