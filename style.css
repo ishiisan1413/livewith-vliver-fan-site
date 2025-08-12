@@ -1,0 +1,149 @@
+/* style.css */
+
+/* 全体の設定 */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ヘッダー */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+header .unofficial-notice {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* メインコンテンツ */
+main {
+    width: 90%;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Vライバー一覧（TOPページ） */
+.liver-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.liver-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.liver-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.liver-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 丸く切り抜き */
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+.liver-card h3 {
+    margin: 1rem 0 0.5rem;
+}
+.liver-card a {
+    display: inline-block;
+    text-decoration: none;
+    background: #555;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+.liver-card a:hover {
+    background: #e9546b; /* ホバー時の色 */
+}
+
+
+/* Vライバー個別ページ */
+.liver-profile {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.liver-visual {
+    flex: 1;
+    text-align: center;
+}
+.liver-visual img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.liver-details {
+    flex: 2;
+}
+.liver-details h2 {
+    border-bottom: 2px solid #e9546b;
+    padding-bottom: 0.5rem;
+}
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.profile-table th, .profile-table td {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    text-align: left;
+}
+.profile-table th {
+    background-color: #f9f9f9;
+    width: 30%;
+}
+.social-links {
+    margin-top: 2rem;
+    text-align: center;
+}
+.social-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+.social-links a:hover {
+    opacity: 0.8;
+}
+.link-x { background-color: #1DA1F2; }
+.link-youtube { background-color: #FF0000; }
+.link-instagram { background-color: #C13584; }
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #777;
+}
