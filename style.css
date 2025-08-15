@@ -94,8 +94,9 @@ main {
     margin-bottom: 3rem;
 }
 .liver-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex; /* GridからFlexboxに変更 */
+    flex-wrap: wrap; /* 要素の折り返しを有効に */
+    justify-content: center; /* カードを中央揃えにする */
     gap: 2rem;
 }
 .liver-card {
@@ -204,3 +205,4 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
