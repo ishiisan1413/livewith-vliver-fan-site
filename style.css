@@ -1,214 +1,196 @@
-/* style.css (更新版) */
+/* style.css (デザイン刷新版) */
 
-/* 全体の設定 */
-body {
-    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
+/* === 基本設定 === */
+:root {
+    --accent-color: #e9546b; /* アクセントカラー */
+    --background-color: #121212; /* 背景色 */
+    --card-color: #1e1e1e; /* カードなどの背景色 */
+    --text-color: #f0f0f0; /* 基本の文字色 */
+    --text-muted-color: #888; /* 少し薄い文字色 */
 }
 
-/* ヘッダー */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* === ヘッダー === */
 header {
-    background: #333;
-    color: #fff;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
     padding: 1rem 0;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #333;
 }
 header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
 }
 header .unofficial-notice {
-    font-size: 0.9rem;
-    color: #ccc;
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
 }
 
-/* メインコンテンツの基本スタイルと【動き①】フェードインアニメーション */
 main {
-    width: 90%;
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    /* ↓ここからアニメーション設定 */
-    opacity: 0; /* 最初は透明 */
-    animation: fadeIn 0.8s ease-out forwards; /* 0.8秒かけて表示 */
+    padding-top: 80px; /* 固定ヘッダー分のスペース */
 }
 
-/* Vライバー一覧（TOPページ） */
-.liver-list {
+/* === TOPページ：ヒーローセクション === */
+.hero {
+    height: 60vh;
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(rgba(18,18,18,0.7), rgba(18,18,18,0.9)), url('https://placehold.jp/1200x600.png?text=Fan+Site');
+    background-size: cover;
+    background-position: center;
+}
+.hero-content h2 {
+    font-size: 3rem;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+}
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+
+/* === Vライバー一覧セクション === */
+.liver-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 3rem;
+}
+.liver-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 .liver-card {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    text-align: center;
-    padding: 1.5rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden; /* 画像がはみ出さないように */
+    background: var(--card-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
 }
 .liver-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(233, 84, 107, 0.3);
 }
 .liver-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* 丸く切り抜き */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
     object-fit: cover;
-    border: 3px solid #fff;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
-    transition: transform 0.4s ease; /* 【動き②】ズームのアニメーション速度 */
 }
-/* 【動き②】カードにホバーした時に画像をズームさせる */
-.liver-card:hover img {
-    transform: scale(1.1);
+.card-content {
+    padding: 1.5rem;
 }
-
-.liver-card h3 {
-    margin: 1rem 0 0.5rem;
+.card-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
 }
-.liver-card a {
-    display: inline-block;
-    text-decoration: none;
-    background: #555;
-    color: #fff;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
+.card-content p {
+    margin: 0;
     font-size: 0.9rem;
-    transition: background 0.3s;
-}
-.liver-card a:hover {
-    background: #e9546b; /* ホバー時の色 */
+    color: var(--text-muted-color);
 }
 
-/* Vライバー個別ページ */
+/* === Vライバー個別ページ === */
 .liver-profile {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     align-items: flex-start;
-    flex-wrap: wrap; /* スマホ表示などで折り返すように */
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    flex-wrap: wrap;
 }
 .liver-visual {
     flex: 1;
-    min-width: 250px; /* 横幅の最小値を指定 */
-    text-align: center;
-}
-.liver-details {
-    flex: 2;
-    min-width: 300px; /* 横幅の最小値を指定 */
+    min-width: 300px;
 }
 .liver-visual img {
-    max-width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
+}
+.liver-details {
+    flex: 1.5;
+    min-width: 300px;
 }
 .liver-details h2 {
-    border-bottom: 2px solid #e9546b;
-    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-top: 0;
+    border-bottom: 2px solid #333;
+    padding-bottom: 1rem;
 }
 .profile-table {
     width: 100%;
+    margin-top: 2rem;
     border-collapse: collapse;
-    margin-top: 1rem;
 }
 .profile-table th, .profile-table td {
-    border: 1px solid #ddd;
-    padding: 0.8rem;
+    padding: 1rem;
     text-align: left;
+    border-bottom: 1px solid #333;
 }
 .profile-table th {
-    background-color: #f9f9f9;
+    color: var(--text-muted-color);
     width: 30%;
 }
 .social-links {
     margin-top: 2rem;
-    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 .social-links a {
-    text-decoration: none;
-    color: #fff;
     padding: 0.8rem 1.5rem;
-    margin: 0 0.5rem;
     border-radius: 8px;
     font-size: 1rem;
-    transition: opacity 0.3s, transform 0.1s;
+    font-weight: 700;
+    transition: transform 0.2s ease;
 }
 .social-links a:hover {
-    opacity: 0.8;
+    transform: scale(1.05);
 }
-/* ボタンを押したときに少し沈む動き */
-.social-links a:active {
-    transform: translateY(2px);
-}
-.link-x { background-color: #1DA1F2; }
-.link-youtube { background-color: #FF0000; }
-.link-instagram { background-color: #C13584; }
+.link-x { background-color: #1DA1F2; color: #fff; }
+.link-youtube { background-color: #FF0000; color: #fff; }
 
-
-/* フッター */
+/* === フッター === */
 footer {
     text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
+    padding: 2rem;
+    margin-top: 4rem;
     font-size: 0.9rem;
-    color: #777;
-}
-
-/* ▼▼▼【動き】を定義するコード（ここから下を追記）▼▼▼ */
-
-/* 【動き①】ページ全体のフェードイン */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* 【動き③】個別ページの要素を左からスライドイン */
-.slide-in-left {
-    opacity: 0;
-    animation: slideInFromLeft 0.7s ease-out 0.3s forwards;
-    /* 0.3s遅れてアニメーション開始 */
-}
-@keyframes slideInFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* 【動き③】個別ページの要素を右からスライドイン */
-.slide-in-right {
-    opacity: 0;
-    animation: slideInFromRight 0.7s ease-out 0.5s forwards;
-    /* 0.5s遅れてアニメーション開始 */
-}
-@keyframes slideInFromRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    color: var(--text-muted-color);
+    border-top: 1px solid #333;
 }
