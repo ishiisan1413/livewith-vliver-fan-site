@@ -100,6 +100,7 @@ main {
     gap: 2rem;
 }
 .liver-card {
+    width: 280px; /* カードの横幅を固定 */
     background: var(--card-color);
     border-radius: 12px;
     overflow: hidden;
@@ -107,6 +108,7 @@ main {
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 柔らかい影 */
 }
+
 .liver-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(86, 163, 216, 0.2); /* ホバー時に水色の影 */
@@ -205,4 +207,5 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
