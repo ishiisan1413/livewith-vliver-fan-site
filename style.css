@@ -1,12 +1,13 @@
-/* style.css (デザイン刷新版) */
+/* style.css (白・水色テーマ版) */
 
-/* === 基本設定 === */
+/* === 基本設定：白テーマ用のカラー設定 === */
 :root {
-    --accent-color: #e9546b; /* アクセントカラー */
-    --background-color: #121212; /* 背景色 */
-    --card-color: #1e1e1e; /* カードなどの背景色 */
-    --text-color: #f0f0f0; /* 基本の文字色 */
-    --text-muted-color: #888; /* 少し薄い文字色 */
+    --accent-color: #56A3D8; /* アクセントカラー（爽やかな水色） */
+    --background-color: #F8FBFF; /* 背景色（真っ白より少し柔らかい白） */
+    --card-color: #FFFFFF; /* カードなどの背景色 */
+    --text-color: #333333; /* 基本の文字色（濃いグレー） */
+    --text-muted-color: #777777; /* 少し薄い文字色 */
+    --border-color: #EAEFF4; /* 境界線の色 */
 }
 
 body {
@@ -28,15 +29,15 @@ img {
 
 /* === ヘッダー === */
 header {
-    background: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8); /* 半透明の白 */
+    backdrop-filter: blur(10px); /* すりガラス効果 */
     padding: 1rem 0;
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
 }
 header h1 {
     margin: 0;
@@ -61,19 +62,22 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: linear-gradient(rgba(18,18,18,0.7), rgba(18,18,18,0.9)), url('https://placehold.jp/1200x600.png?text=Fan+Site');
+    /* 水色の爽やかなグラデーションに変更 */
+    background-image: linear-gradient(to right, rgba(135, 206, 235, 0.8), rgba(86, 163, 216, 0.8)), url('https://placehold.jp/1200x600.png?text=Fan+Site');
     background-size: cover;
     background-position: center;
 }
 .hero-content h2 {
     font-size: 3rem;
     margin: 0;
-    color: #fff;
+    color: #fff; /* 背景が明るい色なので文字は白 */
     font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 .hero-content p {
     font-size: 1.1rem;
-    color: var(--accent-color);
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 
@@ -99,11 +103,12 @@ main {
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 柔らかい影 */
 }
 .liver-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(233, 84, 107, 0.3);
+    box-shadow: 0 10px 30px rgba(86, 163, 216, 0.2); /* ホバー時に水色の影 */
 }
 .liver-card img {
     width: 100%;
@@ -131,8 +136,12 @@ main {
     align-items: flex-start;
     max-width: 1000px;
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 2rem;
     flex-wrap: wrap;
+    background-color: var(--card-color); /* プロフィール部分もカードのように */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
 }
 .liver-visual {
     flex: 1;
@@ -149,7 +158,7 @@ main {
     font-size: 2.5rem;
     color: var(--accent-color);
     margin-top: 0;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 1rem;
 }
 .profile-table {
@@ -160,7 +169,7 @@ main {
 .profile-table th, .profile-table td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
 }
 .profile-table th {
     color: var(--text-muted-color);
@@ -178,12 +187,13 @@ main {
     font-size: 1rem;
     font-weight: 700;
     transition: transform 0.2s ease;
+    color: #fff; /* ボタンの文字は白で見やすく */
 }
 .social-links a:hover {
     transform: scale(1.05);
 }
-.link-x { background-color: #1DA1F2; color: #fff; }
-.link-youtube { background-color: #FF0000; color: #fff; }
+.link-x { background-color: #1DA1F2; }
+.link-youtube { background-color: #FF0000; }
 
 /* === フッター === */
 footer {
@@ -192,5 +202,5 @@ footer {
     margin-top: 4rem;
     font-size: 0.9rem;
     color: var(--text-muted-color);
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
 }
