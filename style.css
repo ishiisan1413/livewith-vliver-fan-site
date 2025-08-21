@@ -161,7 +161,7 @@ main {
     font-size: 2rem;
     color: var(--accent-color);
     margin-top: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 0.2rem;
 }
 .liver-details h3 {
     font-size: 1.0rem;
@@ -213,6 +213,7 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
 
 
