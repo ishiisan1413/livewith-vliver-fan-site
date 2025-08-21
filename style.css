@@ -164,6 +164,13 @@ main {
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 1rem;
 }
+.liver-details h3 {
+    font-size: 0.625rem;
+    color: var(--accent-color);
+    margin-top: 0;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+}
 .profile-table {
     width: 100%;
     margin-top: 2rem;
@@ -207,5 +214,6 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
 
