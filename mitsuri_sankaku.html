@@ -8,24 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // メイン画像とサムネイルの要素を取得
-    const mainImage = document.getElementById('main-image');
-    const thumbnails = document.querySelectorAll('.thumbnail');
-
-    // 各サムネイルにクリックイベントを設定
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function() {
-            // クリックされたサムネイルのdata-full属性から、フルサイズの画像パスを取得
-            const newImageSrc = this.getAttribute('data-full');
-
-            // メイン画像のsrcを新しい画像パスに更新
-            mainImage.src = newImageSrc;
-        });
-    });
-});
-</script>
 <body>
 
     <header>
@@ -92,9 +74,27 @@ document.addEventListener('DOMContentLoaded', function() {
         <p>所属事務所およびご本人とは一切関係ありません。</p>
     </footer>
 
-</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // メイン画像とサムネイルの要素を取得
+    const mainImage = document.getElementById('main-image');
+    const thumbnails = document.querySelectorAll('.thumbnail');
 
+    // 各サムネイルにクリックイベントを設定
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            // クリックされたサムネイルのdata-full属性から、フルサイズの画像パスを取得
+            const newImageSrc = this.getAttribute('data-full');
+
+            // メイン画像のsrcを新しい画像パスに更新
+            mainImage.src = newImageSrc;
+        });
+    });
+});
+</script>
+</body>
 </html>
+
 
 
 
