@@ -153,6 +153,32 @@ main {
 .liver-visual img {
     border-radius: 12px;
 }
+.image-gallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.thumbnails {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    gap: 0.5rem;
+}
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* 画像を丸くする */
+    object-fit: cover; /* 画像がはみ出さないように調整 */
+    cursor: pointer; /* マウスオーバー時に指のアイコンを表示 */
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+}
+.thumbnail:hover {
+    border-color: var(--accent-color); /* マウスオーバー時に枠線を表示 */
+}
+#main-image {
+    width: 100%;
+    height: auto;
+}
 .liver-details {
     flex: 1.5;
     min-width: 300px;
@@ -214,6 +240,7 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
 
 
