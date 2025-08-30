@@ -230,9 +230,9 @@ main {
 
 /* 丸いサムネイルのスタイル */
 .thumbnail {
-    width: 60px; /* サムネイルの幅 */
-    height: 60px; /* サムネイルの高さ */
-    border-radius: 50%; /* ここがポイント！画像を円形に切り抜きます */
+    width: 40px; /* サムネイルの幅を40pxに調整 */
+    height: 40px; /* サムネイルの高さを40pxに調整 */
+    border-radius: 50%; /* 画像を円形に切り抜く */
     object-fit: cover; /* 画像がコンテナを埋めるように調整 */
     border: 2px solid transparent; /* 初期ボーダーを透明に設定 */
     cursor: pointer;
@@ -282,6 +282,7 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
 
 
