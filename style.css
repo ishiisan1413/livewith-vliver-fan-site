@@ -1,4 +1,4 @@
-/* style.css (最終修正版) */
+/* style.css (最終版) */
 
 /* === 基本設定：白テーマ用のカラー設定 === */
 :root {
@@ -161,7 +161,6 @@ main {
     flex-direction: row;
     align-items: flex-start;
     gap: 15px;
-    /* ここから flex-wrap: wrap; を削除 */
 }
 
 /* サムネイルのコンテナ */
@@ -200,7 +199,7 @@ main {
     max-width: 500px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: opacity 0.5s ease-in-out;
 }
 
