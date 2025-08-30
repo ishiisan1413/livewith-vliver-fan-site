@@ -153,52 +153,46 @@ main {
 .liver-visual img {
     border-radius: 12px;
 }
+/* 画像ギャラリーの配置を調整 */
 .image-gallery {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: row; /* サムネイルとメイン画像を横並びにする */
+    align-items: flex-start; /* 上部に揃える */
+    gap: 15px; /* スペースを空ける */
 }
-/* 丸いサムネイルのスタイル */
-.thumbnail {
-    width: 40px; /* サムネイルの幅を40pxに固定 */
-    height: 40px; /* サムネイルの高さを40pxに固定 */
-    border-radius: 50%; /* ここがポイント！画像を円形に切り抜きます */
-    object-fit: cover; /* 画像がコンテナを埋めるように調整 */
-    border: 2px solid transparent; /* 初期ボーダーを透明に設定 */
-    cursor: pointer;
-    transition: border-color 0.3s ease, transform 0.2s ease;
-    /* 新しいプロパティ */
-    flex-shrink: 0; /* サムネイルが縮まないように固定 */
-}
-
 /* サムネイルのコンテナ */
 .thumbnails {
     display: flex;
     flex-direction: column; /* サムネイルを縦に並べる */
     gap: 10px; /* サムネイル間のスペース */
-    /* flex-wrap: wrap; */ /* 今回は縦に並べるため不要 */
-    /* max-heightを調整。10個のサムネイル (40px) + 9つのギャップ (10px) = 400 + 90 = 490px */
-    max-height: 500px; /* サムネイル10個が収まる高さに調整（必要に応じてさらに大きく） */
+    max-height: 500px; /* サムネイル10個が収まる高さに調整 */
     overflow-y: auto; /* サムネイルが収まらない場合にスクロールバーを表示 */
-    padding-right: 5px; /* スクロールバーが表示されたときにコンテンツが隠れないように */
+    padding-right: 5px; /* スクロールバーが表示されたときの隙間 */
 }
-
+/* 丸いサムネイルのスタイル */
+.thumbnail {
+    width: 40px; /* サムネイルの幅を40pxに固定 */
+    height: 40px; /* サムネイルの高さを40pxに固定 */
+    border-radius: 50%; /* 画像を円形に切り抜く */
+    object-fit: cover; /* 画像がコンテナを埋めるように調整 */
+    border: 2px solid transparent; /* 初期ボーダーを透明に設定 */
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0; /* サムネイルが縮まないように固定 */
+}
+/* アクティブなサムネイルのスタイル */
+.thumbnail.active {
+    border-color: #ff69b4; /* アクティブなサムネイルのボーダー色 */
+    transform: scale(1.1); /* アクティブ時に少し拡大 */
+}
 /* メイン画像のスタイル */
 #main-image {
     width: 100%;
-    max-width: 500px; /* 最大幅を設定してレイアウトを崩さないようにする */
+    max-width: 500px; /* 最大幅を設定 */
     height: auto; /* 高さを自動調整し、元の画像のアスペクト比を維持 */
     border-radius: 10px; /* 角を少し丸くする */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 影を追加 */
     transition: opacity 0.5s ease-in-out; /* フェードイン・アウトのアニメーション */
-}
-
-/* image-galleryの調整 (任意) */
-.image-gallery {
-    display: flex;
-    flex-direction: row; /* サムネイルを横並びにする */
-    align-items: flex-start; /* サムネイルを上部に揃える */
-    gap: 15px; /* メイン画像とサムネイルの間にスペースを空ける */
 }
 .liver-details {
     flex: 1.5;
@@ -207,7 +201,7 @@ main {
 .liver-details h2 {
     font-size: 2rem;
     color: var(--accent-color);
-    margin-top: 0; 
+    margin-top: 0;  
     margin-bottom: 0;
     padding-bottom: 0.2rem;
 }
@@ -231,48 +225,6 @@ main {
 .profile-table th {
     color: var(--text-muted-color);
     width: 30%;
-}
-/* 画像ギャラリーの配置を調整 */
-.image-gallery {
-    display: flex;
-    flex-direction: row; /* サムネイルを横並びにする */
-    align-items: flex-start; /* サムネイルを上部に揃える */
-    gap: 15px; /* メイン画像とサムネイルの間にスペースを空ける */
-}
-
-/* サムネイルのコンテナ */
-.thumbnails {
-    display: flex;
-    flex-direction: column; /* サムネイルを縦に並べる */
-    gap: 10px; /* サムネイル間のスペース */
-    flex-wrap: wrap; /* サムネイルが多くなった場合に折り返す */
-    max-height: 500px; /* 10個のサムネイルが収まるように高さを調整 */
-}
-
-/* 丸いサムネイルのスタイル */
-.thumbnail {
-    width: 40px; /* サムネイルの幅を40pxに調整 */
-    height: 40px; /* サムネイルの高さを40pxに調整 */
-    border-radius: 50%; /* 画像を円形に切り抜く */
-    object-fit: cover; /* 画像がコンテナを埋めるように調整 */
-    border: 2px solid transparent; /* 初期ボーダーを透明に設定 */
-    cursor: pointer;
-    transition: border-color 0.3s ease, transform 0.2s ease;
-}
-
-/* アクティブなサムネイルのスタイル */
-.thumbnail.active {
-    border-color: #ff69b4; /* アクティブなサムネイルのボーダー色 */
-    transform: scale(1.1); /* アクティブ時に少し拡大 */
-}
-
-/* メイン画像のスタイル */
-#main-image {
-    width: 100%;
-    max-width: 500px; /* 最大幅を設定してレイアウトを崩さないようにする */
-    border-radius: 10px; /* 角を少し丸くする */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 影を追加 */
-    transition: opacity 0.5s ease-in-out; /* フェードイン・アウトのアニメーション */
 }
 .social-links {
     margin-top: 2rem;
@@ -303,15 +255,3 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
-
-
-
-
-
-
-
-
-
-
-
-
