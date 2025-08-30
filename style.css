@@ -168,6 +168,12 @@ main {
     max-height: 500px; /* サムネイル10個が収まる高さに調整 */
     overflow-y: auto; /* サムネイルが収まらない場合にスクロールバーを表示 */
     padding-right: 5px; /* スクロールバーが表示されたときの隙間 */
+    
+    /* ここに以下のプロパティを追加または修正 */
+    width: 50px; /* サムネイルのサイズ(40px)より少し余裕を持たせた幅を設定 */
+    /* あるいは flex-basis を使う方法も有効 */
+    /* flex-basis: 50px; */ 
+    flex-shrink: 0; /* thumbnailsコンテナ自体も縮まないように */
 }
 /* 丸いサムネイルのスタイル */
 .thumbnail {
@@ -255,5 +261,6 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
 
