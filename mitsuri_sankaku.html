@@ -23,6 +23,8 @@
                         <img src="images/thumb_mitsuri_sankaku01.jpg" class="thumbnail" data-full="images/mitsuri_sankaku01.jpg" alt="サムネイル1">
                         <img src="images/thumb_mitsuri_sankaku02.jpg" class="thumbnail" data-full="images/mitsuri_sankaku02.jpg" alt="サムネイル2">
                         <img src="images/thumb_mitsuri_sankaku03.jpg" class="thumbnail" data-full="images/mitsuri_sankaku03.jpg" alt="サムネイル3">
+                        <img src="images/thumb_mitsuri_sankaku04.jpg" class="thumbnail" data-full="images/mitsuri_sankaku04.jpg" alt="サムネイル4">
+                        <img src="images/thumb_mitsuri_sankaku05.jpg" class="thumbnail" data-full="images/mitsuri_sankaku05.jpg" alt="サムネイル5">
                     </div>
                     <img src="images/mitsuri_sankaku01.jpg" alt="蜜璃さんかくのビジュアル" id="main-image">
                 </div>
@@ -65,51 +67,16 @@
 
         <div class="social-links">
             <a href="https://x.com/m_sankaku180" target="_blank" class="link-x">X (旧Twitter)</a>
-            </div>
+        </div>
 
-        </main>
+    </main>
 
     <footer>
         <p>当サイトは、株式会社Ultimatelyが運営する「LIVEwith」所属Vライバーを応援する目的で作成された非公式ファンサイトです。</p>
         <p>所属事務所およびご本人とは一切関係ありません。</p>
     </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // メイン画像とサムネイルの要素を取得
-    const mainImage = document.getElementById('main-image');
-    const thumbnails = document.querySelectorAll('.thumbnail');
+    <script src="script.js"></script>
 
-    // 各サムネイルにクリックイベントを設定
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function() {
-            // クリックされたサムネイルのdata-full属性から、フルサイズの画像パスを取得
-            const newImageSrc = this.getAttribute('data-full');
-
-            // メイン画像のsrcを新しい画像パスに更新
-            mainImage.src = newImageSrc;
-        });
-    });
-});
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
