@@ -158,7 +158,7 @@ main {
     display: flex;
     flex-direction: row; /* サムネイルとメイン画像を横並びにする */
     align-items: flex-start; /* 上部に揃える */
-    gap: 15px; /* スペースを空ける */
+    gap: 10px; /* スペースを空ける */
 }
 /* サムネイルのコンテナ */
 .thumbnails {
@@ -255,4 +255,5 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
