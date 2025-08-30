@@ -172,6 +172,13 @@ main {
     border: 2px solid transparent;
     transition: border-color 0.2s ease-in-out;
 }
+.thumbnails {
+    display: flex;
+    flex-direction: row; /* 横並びに変更 */
+    flex-wrap: wrap; /* 折り返しを有効にする */
+    gap: 10px; /* サムネイル間のスペース */
+    max-width: 500px; /* 親要素の幅に合わせて折り返す */
+}
 .thumbnail:hover {
     border-color: var(--accent-color); /* マウスオーバー時に枠線を表示 */
 }
@@ -282,6 +289,7 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
 
 
