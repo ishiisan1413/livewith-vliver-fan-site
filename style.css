@@ -158,33 +158,47 @@ main {
     align-items: flex-start;
     gap: 1rem;
 }
-.thumbnails {
-    display: flex;
-    flex-direction: column; /* 縦に並べる */
-    gap: 0.5rem;
-}
+/* 丸いサムネイルのスタイル */
 .thumbnail {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* 画像を丸くする */
-    object-fit: cover; /* 画像がはみ出さないように調整 */
-    cursor: pointer; /* マウスオーバー時に指のアイコンを表示 */
-    border: 2px solid transparent;
-    transition: border-color 0.2s ease-in-out;
+    width: 40px; /* サムネイルの幅を40pxに固定 */
+    height: 40px; /* サムネイルの高さを40pxに固定 */
+    border-radius: 50%; /* ここがポイント！画像を円形に切り抜きます */
+    object-fit: cover; /* 画像がコンテナを埋めるように調整 */
+    border: 2px solid transparent; /* 初期ボーダーを透明に設定 */
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+    /* 新しいプロパティ */
+    flex-shrink: 0; /* サムネイルが縮まないように固定 */
 }
+
+/* サムネイルのコンテナ */
 .thumbnails {
     display: flex;
-    flex-direction: row; /* 横並びに変更 */
-    flex-wrap: wrap; /* 折り返しを有効にする */
+    flex-direction: column; /* サムネイルを縦に並べる */
     gap: 10px; /* サムネイル間のスペース */
-    max-width: 500px; /* 親要素の幅に合わせて折り返す */
+    /* flex-wrap: wrap; */ /* 今回は縦に並べるため不要 */
+    /* max-heightを調整。10個のサムネイル (40px) + 9つのギャップ (10px) = 400 + 90 = 490px */
+    max-height: 500px; /* サムネイル10個が収まる高さに調整（必要に応じてさらに大きく） */
+    overflow-y: auto; /* サムネイルが収まらない場合にスクロールバーを表示 */
+    padding-right: 5px; /* スクロールバーが表示されたときにコンテンツが隠れないように */
 }
-.thumbnail:hover {
-    border-color: var(--accent-color); /* マウスオーバー時に枠線を表示 */
-}
+
+/* メイン画像のスタイル */
 #main-image {
     width: 100%;
-    height: auto;
+    max-width: 500px; /* 最大幅を設定してレイアウトを崩さないようにする */
+    height: auto; /* 高さを自動調整し、元の画像のアスペクト比を維持 */
+    border-radius: 10px; /* 角を少し丸くする */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 影を追加 */
+    transition: opacity 0.5s ease-in-out; /* フェードイン・アウトのアニメーション */
+}
+
+/* image-galleryの調整 (任意) */
+.image-gallery {
+    display: flex;
+    flex-direction: row; /* サムネイルを横並びにする */
+    align-items: flex-start; /* サムネイルを上部に揃える */
+    gap: 15px; /* メイン画像とサムネイルの間にスペースを空ける */
 }
 .liver-details {
     flex: 1.5;
@@ -289,6 +303,7 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
 
 
