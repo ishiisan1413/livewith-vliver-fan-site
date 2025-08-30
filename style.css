@@ -1,4 +1,4 @@
-/* style.css (最終版) */
+/* style.css (最終修正版) */
 
 /* === 基本設定：白テーマ用のカラー設定 === */
 :root {
@@ -140,7 +140,7 @@ main {
     max-width: 1000px;
     margin: 4rem auto;
     padding: 2rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* 小さい画面で画像と詳細が縦に並ぶように */
     background-color: var(--card-color);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -148,10 +148,8 @@ main {
 }
 
 .liver-visual {
-    flex: 1;
-    min-width: 300px;
-    /* 調整: flex-basis を追加して、要素の初期サイズを明示的に指定 */
-    flex-basis: 300px;
+    flex: 1 1 350px; /* 拡大率 1, 縮小率 1, 基本サイズ 350px */
+    min-width: 250px; /* 最小幅を設定 */
 }
 .liver-visual img {
     border-radius: 12px;
@@ -162,9 +160,8 @@ main {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 15px; /* ここは元に戻します。 */
-    /* 調整: 小さな画面でレイアウトが崩れないように flex-wrap を追加 */
-    flex-wrap: wrap;
+    gap: 15px;
+    /* ここから flex-wrap: wrap; を削除 */
 }
 
 /* サムネイルのコンテナ */
@@ -175,9 +172,8 @@ main {
     max-height: 500px;
     overflow-y: auto;
     padding-right: 5px;
-    /* 調整: flex-basis を追加して、コンテナ自体の幅を確保 */
-    flex-basis: 50px;
-    flex-shrink: 0;
+    flex-basis: 50px; /* サムネイルコンテナの基本幅 */
+    flex-shrink: 0; /* サムネイルコンテナも縮まないように */
 }
 
 /* 丸いサムネイルのスタイル */
@@ -189,7 +185,7 @@ main {
     border: 2px solid transparent;
     cursor: pointer;
     transition: border-color 0.3s ease, transform 0.2s ease;
-    flex-shrink: 0;
+    flex-shrink: 0; /* サムネイルは縮まない */
 }
 
 /* アクティブなサムネイルのスタイル */
@@ -200,8 +196,7 @@ main {
 
 /* メイン画像のスタイル */
 #main-image {
-    /* 調整: flex-grow: 1; を追加して、余ったスペースを埋めるようにする */
-    flex-grow: 1;
+    flex-grow: 1; /* 残りのスペースを埋める */
     max-width: 500px;
     height: auto;
     border-radius: 10px;
@@ -210,10 +205,8 @@ main {
 }
 
 .liver-details {
-    flex: 1.5;
-    min-width: 300px;
-    /* 調整: flex-basis を追加して、要素の初期サイズを明示的に指定 */
-    flex-basis: 400px; /* 画像と文字のバランスをとるため、少し大きめに設定 */
+    flex: 2 1 450px; /* 拡大率 2, 縮小率 1, 基本サイズ 450px */
+    min-width: 300px; /* 最小幅を設定 */
 }
 .liver-details h2 {
     font-size: 2rem;
@@ -271,4 +264,34 @@ footer {
     font-size: 0.9rem;
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
+}
+
+/* === レスポンシブデザインの調整 === */
+@media (max-width: 768px) {
+    .liver-profile {
+        flex-direction: column; /* 小さい画面では縦並びに */
+        align-items: center;
+        padding: 1rem;
+    }
+    .liver-visual, .liver-details {
+        flex: 1 1 100%; /* 全幅を占めるように */
+        min-width: unset; /* 最小幅の制約を解除 */
+    }
+    .image-gallery {
+        flex-direction: column; /* サムネイルとメイン画像を縦に並べる */
+        align-items: center;
+        width: 100%; /* 全幅を占めるように */
+        gap: 10px;
+    }
+    .thumbnails {
+        flex-direction: row; /* サムネイルを横並びにする */
+        flex-wrap: wrap; /* 折り返すように */
+        max-height: unset; /* 高さの制約を解除 */
+        width: 100%; /* 全幅を占めるように */
+        justify-content: center; /* 中央寄せ */
+        padding-right: 0;
+    }
+    #main-image {
+        max-width: 100%;
+    }
 }
