@@ -211,6 +211,48 @@ main {
     color: var(--text-muted-color);
     width: 30%;
 }
+/* 画像ギャラリーの配置を調整 */
+.image-gallery {
+    display: flex;
+    flex-direction: row; /* サムネイルを横並びにする */
+    align-items: flex-start; /* サムネイルを上部に揃える */
+    gap: 15px; /* メイン画像とサムネイルの間にスペースを空ける */
+}
+
+/* サムネイルのコンテナ */
+.thumbnails {
+    display: flex;
+    flex-direction: column; /* サムネイルを縦に並べる */
+    gap: 10px; /* サムネイル間のスペース */
+    flex-wrap: wrap; /* サムネイルが多くなった場合に折り返す */
+    max-height: 500px; /* 10個のサムネイルが収まるように高さを調整 */
+}
+
+/* 丸いサムネイルのスタイル */
+.thumbnail {
+    width: 60px; /* サムネイルの幅 */
+    height: 60px; /* サムネイルの高さ */
+    border-radius: 50%; /* ここがポイント！画像を円形に切り抜きます */
+    object-fit: cover; /* 画像がコンテナを埋めるように調整 */
+    border: 2px solid transparent; /* 初期ボーダーを透明に設定 */
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+/* アクティブなサムネイルのスタイル */
+.thumbnail.active {
+    border-color: #ff69b4; /* アクティブなサムネイルのボーダー色 */
+    transform: scale(1.1); /* アクティブ時に少し拡大 */
+}
+
+/* メイン画像のスタイル */
+#main-image {
+    width: 100%;
+    max-width: 500px; /* 最大幅を設定してレイアウトを崩さないようにする */
+    border-radius: 10px; /* 角を少し丸くする */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 影を追加 */
+    transition: opacity 0.5s ease-in-out; /* フェードイン・アウトのアニメーション */
+}
 .social-links {
     margin-top: 2rem;
     display: flex;
@@ -240,6 +282,7 @@ footer {
     color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
+
 
 
 
