@@ -29,8 +29,8 @@ img {
 
 /* === ヘッダー === */
 header {
-    background: rgba(255, 255, 255, 0.8); /* 半透明の白 */
-    backdrop-filter: blur(10px); /* すりガラス効果 */
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     padding: 1rem 0;
     text-align: center;
     position: fixed;
@@ -39,12 +39,14 @@ header {
     z-index: 100;
     border-bottom: 1px solid var(--border-color);
 }
+
 header h1 {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent-color);
 }
+
 header .unofficial-notice {
     margin: 0;
     font-size: 0.8rem;
@@ -52,7 +54,7 @@ header .unofficial-notice {
 }
 
 main {
-    padding-top: 80px; /* 固定ヘッダー分のスペース */
+    padding-top: 80px;
 }
 
 /* === TOPページ：ヒーローセクション === */
@@ -62,24 +64,24 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* 水色の爽やかなグラデーションに変更 */
     background-image: linear-gradient(to right, rgba(135, 206, 235, 0.8), rgba(86, 163, 216, 0.8)), url('https://placehold.jp/1200x600.png?text=Fan+Site');
     background-size: cover;
     background-position: center;
 }
+
 .hero-content h2 {
     font-size: 3rem;
     margin: 0;
-    color: #fff; /* 背景が明るい色なので文字は白 */
+    color: #fff;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .hero-content p {
     font-size: 1.1rem;
     color: #fff;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-
 
 /* === Vライバー一覧セクション === */
 .liver-section {
@@ -87,45 +89,52 @@ main {
     margin: 4rem auto;
     padding: 0 2rem;
 }
+
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     color: var(--accent-color);
     margin-bottom: 3rem;
 }
+
 .liver-list {
-    display: flex; /* GridからFlexboxに変更 */
-    flex-wrap: wrap; /* 要素の折り返しを有効に */
-    justify-content: center; /* カードを中央揃えにする */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
+
 .liver-card {
-    width: 280px; /* カードの横幅を固定 */
+    width: 280px;
     background: var(--card-color);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 柔らかい影 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .liver-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(86, 163, 216, 0.2); /* ホバー時に水色の影 */
+    box-shadow: 0 10px 30px rgba(86, 163, 216, 0.2);
 }
+
 .liver-card img {
     width: 100%;
     height: auto;
     aspect-ratio: 3/4;
     object-fit: cover;
 }
+
 .card-content {
     padding: 1.5rem;
 }
+
 .card-content h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1.4rem;
 }
+
 .card-content p {
     margin: 0;
     font-size: 0.9rem;
@@ -140,7 +149,7 @@ main {
     max-width: 1000px;
     margin: 4rem auto;
     padding: 2rem;
-    flex-wrap: wrap; /* 小さい画面で画像と詳細が縦に並ぶように */
+    flex-wrap: wrap;
     background-color: var(--card-color);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -148,14 +157,15 @@ main {
 }
 
 .liver-visual {
-    flex: 1 1 350px; /* 拡大率 1, 縮小率 1, 基本サイズ 350px */
-    min-width: 250px; /* 最小幅を設定 */
+    /* 修正 */
+    flex: 1;
+    min-width: 350px; /* ここを調整して、画像の最小幅を確保 */
 }
+
 .liver-visual img {
     border-radius: 12px;
 }
 
-/* 画像ギャラリーの配置を調整 */
 .image-gallery {
     display: flex;
     flex-direction: row;
@@ -163,7 +173,6 @@ main {
     gap: 15px;
 }
 
-/* サムネイルのコンテナ */
 .thumbnails {
     display: flex;
     flex-direction: column;
@@ -171,11 +180,10 @@ main {
     max-height: 500px;
     overflow-y: auto;
     padding-right: 5px;
-    flex-basis: 50px; /* サムネイルコンテナの基本幅 */
-    flex-shrink: 0; /* サムネイルコンテナも縮まないように */
+    width: 50px; /* サムネイルコンテナの固定幅 */
+    flex-shrink: 0;
 }
 
-/* 丸いサムネイルのスタイル */
 .thumbnail {
     width: 40px;
     height: 40px;
@@ -184,18 +192,16 @@ main {
     border: 2px solid transparent;
     cursor: pointer;
     transition: border-color 0.3s ease, transform 0.2s ease;
-    flex-shrink: 0; /* サムネイルは縮まない */
+    flex-shrink: 0;
 }
 
-/* アクティブなサムネイルのスタイル */
 .thumbnail.active {
     border-color: #ff69b4;
     transform: scale(1.1);
 }
 
-/* メイン画像のスタイル */
 #main-image {
-    flex-grow: 1; /* 残りのスペースを埋める */
+    flex-grow: 1;
     max-width: 500px;
     height: auto;
     border-radius: 10px;
@@ -204,16 +210,19 @@ main {
 }
 
 .liver-details {
-    flex: 2 1 450px; /* 拡大率 2, 縮小率 1, 基本サイズ 450px */
-    min-width: 300px; /* 最小幅を設定 */
+    /* 修正 */
+    flex: 1;
+    min-width: 300px; /* ここを調整して、文字の最小幅を確保 */
 }
+
 .liver-details h2 {
     font-size: 2rem;
     color: var(--accent-color);
-    margin-top: 0;  
+    margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 0.2rem;
 }
+
 .liver-details h3 {
     font-size: 1.0rem;
     color: var(--accent-color);
@@ -221,26 +230,31 @@ main {
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 1rem;
 }
+
 .profile-table {
     width: 100%;
     margin-top: 2rem;
     border-collapse: collapse;
 }
+
 .profile-table th, .profile-table td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
 }
+
 .profile-table th {
     color: var(--text-muted-color);
     width: 30%;
 }
+
 .social-links {
     margin-top: 2rem;
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
+
 .social-links a {
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -249,9 +263,11 @@ main {
     transition: transform 0.2s ease;
     color: #fff;
 }
+
 .social-links a:hover {
     transform: scale(1.05);
 }
+
 .link-x { background-color: #1DA1F2; }
 .link-youtube { background-color: #FF0000; }
 
@@ -268,26 +284,26 @@ footer {
 /* === レスポンシブデザインの調整 === */
 @media (max-width: 768px) {
     .liver-profile {
-        flex-direction: column; /* 小さい画面では縦並びに */
+        flex-direction: column;
         align-items: center;
         padding: 1rem;
     }
     .liver-visual, .liver-details {
-        flex: 1 1 100%; /* 全幅を占めるように */
-        min-width: unset; /* 最小幅の制約を解除 */
+        flex: 1 1 100%;
+        min-width: unset;
     }
     .image-gallery {
-        flex-direction: column; /* サムネイルとメイン画像を縦に並べる */
+        flex-direction: column;
         align-items: center;
-        width: 100%; /* 全幅を占めるように */
+        width: 100%;
         gap: 10px;
     }
     .thumbnails {
-        flex-direction: row; /* サムネイルを横並びにする */
-        flex-wrap: wrap; /* 折り返すように */
-        max-height: unset; /* 高さの制約を解除 */
-        width: 100%; /* 全幅を占めるように */
-        justify-content: center; /* 中央寄せ */
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: unset;
+        width: 100%;
+        justify-content: center;
         padding-right: 0;
     }
     #main-image {
