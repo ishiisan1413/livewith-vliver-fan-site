@@ -129,6 +129,12 @@ main {
     color: var(--text-muted-color);
 }
 
+/* === Vライバー個別ページ === */
+.liver-profile {
+    /* PC・タブレットでは横並び */
+    display: flex;
+    gap: 3rem; 
+    max-width: 1000px;
     margin: 4rem auto;
     padding: 2rem;
     background-color: var(--card-color);
@@ -138,9 +144,9 @@ main {
 }
 
 .liver-visual {
-    /* flexboxでの幅設定を調整 */
-    flex: 0 0 45%; /* 伸び縮みせず、幅を45%に固定 */
-    margin-bottom: 0;
+    /* 画像セクションの幅を固定 */
+    flex: 0 0 45%; 
+    margin-bottom: 0; 
 }
 
 /* 画像ギャラリーの配置を調整 */
@@ -191,8 +197,8 @@ main {
 }
 
 .liver-details {
-    /* flexboxでの幅設定を調整 */
-    flex: 1 1 55%; /* 伸びやすく、幅を55%に設定 */
+    /* テキストセクションが残りのスペースを埋める */
+    flex: 1 1 55%; 
 }
 
 .liver-details h2 {
@@ -242,3 +248,35 @@ main {
 }
 .link-x { background-color: #1DA1F2; }
 .link-youtube { background-color: #FF0000; }
+
+
+/* === レスポンシブデザインの調整 === */
+@media (max-width: 768px) {
+    .liver-profile {
+        /* スマートフォンでは縦並びにする */
+        flex-direction: column;
+        gap: 2rem; 
+        padding: 1rem; 
+    }
+    .liver-visual, .liver-details {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+    .thumbnails {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: unset;
+        width: 100%;
+        justify-content: center;
+        padding-right: 0;
+    }
+    #main-image {
+        max-width: 100%;
+    }
+}
