@@ -187,11 +187,17 @@ main {
     transform: scale(1.1);
 }
 
-.slide-in-left,
-.slide-in-right {
-  position: relative; /* 要素がレイアウトフロー内に留まるようにする */
-  left: 0;
-  opacity: 1;
+.slide-in-left {
+  animation: slideLeft 1s ease-out forwards;
+  transform: translateX(-100%); /* このプロパティに変更 */
+  opacity: 0;
+}
+
+@keyframes slideLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* メイン画像のスタイル */
@@ -287,4 +293,5 @@ main {
         max-width: 100%;
     }
 }
+
 
