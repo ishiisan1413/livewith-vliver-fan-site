@@ -238,17 +238,26 @@ main {
 }
 .social-links a {
     padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 8px; /* 角丸を調整 */
     font-size: 1rem;
     font-weight: 700;
     transition: transform 0.2s ease;
     color: #fff;
+    display: flex; /* アイコンとテキストを横並びにするため */
+    align-items: center; /* アイコンとテキストを垂直方向中央揃えにするため */
+    gap: 0.5rem; /* アイコンとテキストの間隔 */
 }
 .social-links a:hover {
     transform: scale(1.05);
 }
-.link-x { background-color: #1DA1F2; }
-.link-youtube { background-color: #FF0000; }
+.link-x { 
+    background-color: #000000; /* Xのブランドカラー（黒） */
+    color: #FFFFFF; /* テキストを白に */
+    border-radius: 9999px; /* 丸いボタンにする */
+    padding: 0.8rem 1.8rem; /* 左右のパディングを少し増やして調整 */
+}
+/* .link-youtube はもしあれば追加 */
+.link-youtube { background-color: #FF0000; } 
 
 /* === フッター === */
 footer {
@@ -293,5 +302,6 @@ footer {
         max-width: 100%;
     }
 }
+
 
 
