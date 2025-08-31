@@ -201,7 +201,6 @@ main {
     /* テキストセクションが残りのスペースを埋める */
     flex: 1 1 55%; 
 }
-
 .liver-details h2 {
     font-size: 2rem;
     color: var(--accent-color);
@@ -215,6 +214,13 @@ main {
     margin-top: 0;
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 1rem;
+}
+.self-intro {
+    font-size: 1.1rem; /* 少し大きく */
+    font-weight: 700; /* 太字に */
+    color: var(--accent-color); /* アクセントカラーに */
+    display: block; /* 独立したブロック要素に */
+    margin-bottom: 0.5rem; /* 下に少し余白を追加 */
 }
 .profile-table {
     width: 100%;
@@ -302,6 +308,7 @@ footer {
         max-width: 100%;
     }
 }
+
 
 
 
