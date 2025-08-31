@@ -131,9 +131,9 @@ main {
 
 /* === Vライバー個別ページ === */
 .liver-profile {
-    /* Flexboxを削除し、columnsプロパティを使用 */
-    columns: 2 400px; 
-    column-gap: 3rem;
+    /* Flexboxに修正 */
+    display: flex;
+    gap: 3rem; /* 間隔をgapで設定 */
     max-width: 1000px;
     margin: 4rem auto;
     padding: 2rem;
@@ -144,15 +144,9 @@ main {
 }
 
 .liver-visual {
-    /* columnsプロパティでコンテンツが分割されるのを防ぐ */
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid;
-    width: 100%;
-    margin-bottom: 2rem;
-}
-.liver-visual img {
-    border-radius: 12px;
+    /* flexboxでの幅設定 */
+    flex: 1; 
+    margin-bottom: 0; /* Flexboxでは不要になるため削除 */
 }
 
 /* 画像ギャラリーの配置を調整 */
@@ -203,10 +197,10 @@ main {
 }
 
 .liver-details {
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid;
+    /* flexboxでの幅設定 */
+    flex: 1;
 }
+
 .liver-details h2 {
     font-size: 2rem;
     color: var(--accent-color);
@@ -255,26 +249,18 @@ main {
 .link-x { background-color: #1DA1F2; }
 .link-youtube { background-color: #FF0000; }
 
-/* === フッター === */
-footer {
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-    font-size: 0.9rem;
-    color: var(--text-muted-color);
-    border-top: 1px solid var(--border-color);
-}
 
 /* === レスポンシブデザインの調整 === */
 @media (max-width: 768px) {
     .liver-profile {
-        columns: 1; /* 小さい画面では1列に */
-        column-gap: 0;
+        /* スマートフォンでは縦並びにする */
+        flex-direction: column;
+        gap: 2rem; /* 間隔を調整 */
         padding: 1rem;
     }
     .liver-visual, .liver-details {
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
     }
     .image-gallery {
         flex-direction: column;
@@ -294,3 +280,4 @@ footer {
         max-width: 100%;
     }
 }
+
