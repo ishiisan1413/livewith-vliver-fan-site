@@ -131,12 +131,9 @@ main {
 
 /* === Vライバー個別ページ === */
 .liver-profile {
-    /* FlexboxからGridにレイアウトを変更 */
-    display: grid;
-    /* 2つの列を定義: 1列目は画像用、2列目は文字用 */
-    grid-template-columns: 450px 1fr; 
-    gap: 3rem;
-    align-items: start;
+    /* Flexboxを削除し、columnsプロパティを使用 */
+    columns: 2 400px; 
+    column-gap: 3rem;
     max-width: 1000px;
     margin: 4rem auto;
     padding: 2rem;
@@ -147,17 +144,15 @@ main {
 }
 
 .liver-visual {
-    /* grid-columnは不要です。自動的に1列目に配置されます。 */
-    /* Flexboxは維持 */
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    /* columnsプロパティでコンテンツが分割されるのを防ぐ */
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 .liver-visual img {
     border-radius: 12px;
-    /* メイン画像は明示的に幅を指定 */
-    width: 450px;
-    height: auto;
 }
 
 /* 画像ギャラリーの配置を調整 */
@@ -208,9 +203,9 @@ main {
 }
 
 .liver-details {
-    /* grid-columnは不要です。自動的に2列目に配置されます。 */
-    /* min-widthは不要。Gridが幅を自動調整します。 */
-    /* flexは不要。Gridが幅を自動調整します。 */
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 .liver-details h2 {
     font-size: 2rem;
@@ -273,13 +268,13 @@ footer {
 /* === レスポンシブデザインの調整 === */
 @media (max-width: 768px) {
     .liver-profile {
-        flex-direction: column;
-        align-items: center;
+        columns: 1; /* 小さい画面では1列に */
+        column-gap: 0;
         padding: 1rem;
     }
     .liver-visual, .liver-details {
-        flex: 1 1 100%;
-        min-width: unset;
+        width: 100%;
+        margin-bottom: 1rem;
     }
     .image-gallery {
         flex-direction: column;
@@ -299,4 +294,3 @@ footer {
         max-width: 100%;
     }
 }
-
