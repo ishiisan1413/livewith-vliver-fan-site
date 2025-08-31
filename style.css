@@ -154,8 +154,8 @@ main {
     flex-direction: row;
     align-items: flex-start;
     gap: 15px;
-    /* このコンテナの幅を70%に制限 */
-    max-width: 70%; 
+    /* このコンテナの幅を80%に制限 */
+    max-width: 80%; 
 }
 
 /* サムネイルのコンテナ */
@@ -283,3 +283,4 @@ main {
         max-width: 100%;
     }
 }
+
