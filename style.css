@@ -250,6 +250,16 @@ main {
 .link-x { background-color: #1DA1F2; }
 .link-youtube { background-color: #FF0000; }
 
+/* === フッター === */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    font-size: 0.8rem; /* フォントサイズを小さくする */
+    color: var(--text-muted-color); /* 色を薄いグレーにする */
+    border-top: 1px solid var(--border-color);
+}
+
 
 /* === レスポンシブデザインの調整 === */
 @media (max-width: 768px) {
@@ -283,4 +293,5 @@ main {
         max-width: 100%;
     }
 }
+
 
