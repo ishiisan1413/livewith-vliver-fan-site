@@ -216,11 +216,14 @@ main {
     padding-bottom: 1rem;
 }
 .self-intro {
-    font-size: 1.1rem; /* 少し大きく */
-    font-weight: 700; /* 太字に */
-    color: var(--accent-color); /* アクセントカラーに */
-    display: block; /* 独立したブロック要素に */
-    margin-bottom: 0.5rem; /* 下に少し余白を追加 */
+    background-color: #ffeaea; /* 薄いピンクの背景色 */
+    border: 1px solid #ff69b4; /* 濃いピンクの枠線 */
+    color: #ff69b4; /* テキスト色を濃いピンクに */
+    padding: 0.5rem 1rem;
+    border-radius: 8px; /* 角丸にする */
+    display: inline-block; /* インラインブロック要素に */
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 .profile-table {
     width: 100%;
@@ -308,6 +311,7 @@ footer {
         max-width: 100%;
     }
 }
+
 
 
 
