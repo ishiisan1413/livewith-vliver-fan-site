@@ -57,7 +57,7 @@ main {
 .hero {
     position: relative;
     overflow: hidden;
-    height: 20vh;
+    height: 15vh;
     min-height: 300px;
     display: flex;
     align-items: center;
@@ -658,6 +658,7 @@ nav ul li a:hover {
         height: 35vh;
     }
 }
+
 
 
 
