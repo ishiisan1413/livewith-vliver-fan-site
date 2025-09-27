@@ -55,15 +55,52 @@ main {
 
 /* === TOPページ：ヒーローセクション === */
 .hero {
-    height: 15vh;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 20vh;
+    min-height: 300px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+    background: linear-gradient(
+        to bottom right,
+        rgba(163, 196, 215, 0.6),
+        rgba(215, 106, 166, 0.4)
+    );
+    color: #ffffff;
+}
+
+.hero-content {
+    position: relative;  /* 背景オーバーレイが効くように */
+    z-index: 1;
+    max-width: 90%;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin: 0 0 1.5rem 0;
+    color: #fff;  /* 背景との対比を見て調整 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.8rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 999px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
 .hero-content h2 {
@@ -543,6 +580,7 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
 
 
 
