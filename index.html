@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LIVEwith所属イチオシVライバー（非公式）</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- OGP（SNSシェア用） -->
     <meta property="og:title" content="LIVEwith非公式ファンサイト" />
@@ -27,29 +27,44 @@
         <ul>
             <li><a href="#tiktok-intro">はじめての方へ</a></li>
             <li><a href="#livers">Vライバー一覧</a></li>
-            <li><a href="https://forms.gle/UV8Wmsa9LaXkXZTA6" target="_blank">情報提供</a></li>
+            <li><a href="https://forms.gle/UV8Wmsa9LaXkXZTA6" target="_blank" rel="noopener noreferrer">情報提供</a></li>
         </ul>
     </nav>
 
     <main>
         <!-- ヒーローセクション -->
         <section class="hero animate">
-          <div class="hero-content">
-            <h2 class="hero-title">FIND YOUR FAVORITE</h2>
-            <p class="hero-subtitle">LIVEwith所属のVライバーたちと、新しい世界を。</p>
-            <a href="#v-livers" class="cta-button">配信者一覧を見る</a>
-          </div>
+            <div class="hero-content">
+                <h2 class="hero-title">FIND YOUR FAVORITE</h2>
+                <p class="hero-subtitle">LIVEwith所属のVライバーたちと、新しい世界を。</p>
+                <a href="#livers" class="cta-button">配信者一覧を見る</a>
+            </div>
+        </section>
+
+        <!-- 画像切り替えスライダーセクション（追加部分） -->
+        <section class="image-slider-section animate fade-in">
+            <h2>Vライバー画像ギャラリー</h2>
+            <div class="image-slider">
+                <img id="main-image" src="images/thumb_mitsuri_sankaku00.jpg" alt="メイン画像" />
+
+                <div class="thumbnails">
+                    <img class="thumbnail active" src="images/thumb_mitsuri_sankaku00.jpg" data-full="images/thumb_mitsuri_sankaku00.jpg" alt="蜜璃さんかくのサムネイル" />
+                    <!-- サンプル追加サムネイル -->
+                    <img class="thumbnail" src="images/thumb_sample2.jpg" data-full="images/thumb_sample2_full.jpg" alt="サンプル2のサムネイル" />
+                    <img class="thumbnail" src="images/thumb_sample3.jpg" data-full="images/thumb_sample3_full.jpg" alt="サンプル3のサムネイル" />
+                </div>
+            </div>
         </section>
 
         <!-- TikTok Liveとは -->
         <section id="tiktok-intro" class="tiktok-intro">
-          <div class="intro-inner">
-            <h2 class="animate fade-in">TikTok Liveとは？</h2>
-            <p class="animate fade-up">TikTok Liveは、リアルタイムで配信者と視聴者がコミュニケーションできるライブ配信機能です。</p>
-            <p class="animate fade-up delay-1">LIVEwithに所属するVライバーたちは、毎日TikTok Liveで歌や雑談、企画などの配信を行っています！</p>
-            <p class="animate fade-up delay-2">アカウントがあれば、誰でも無料で視聴できます。</p>
-            <a class="button animate pop-in delay-3" href="https://www.tiktok.com/live" target="_blank">▶ TikTok Liveの公式ページを見る</a>
-          </div>
+            <div class="intro-inner">
+                <h2 class="animate fade-in">TikTok Liveとは？</h2>
+                <p class="animate fade-up">TikTok Liveは、リアルタイムで配信者と視聴者がコミュニケーションできるライブ配信機能です。</p>
+                <p class="animate fade-up delay-1">LIVEwithに所属するVライバーたちは、毎日TikTok Liveで歌や雑談、企画などの配信を行っています！</p>
+                <p class="animate fade-up delay-2">アカウントがあれば、誰でも無料で視聴できます。</p>
+                <a class="button animate pop-in delay-3" href="https://www.tiktok.com/live" target="_blank" rel="noopener noreferrer">▶ TikTok Liveの公式ページを見る</a>
+            </div>
         </section>
 
         <!-- ライバー一覧 -->
@@ -58,13 +73,13 @@
             <div class="liver-list">
                 <div class="liver-card">
                     <a href="mitsuri_sankaku.html">
-                        <img src="images/thumb_mitsuri_sankaku00.jpg" alt="蜜璃さんかくのビジュアル">
+                        <img src="images/thumb_mitsuri_sankaku00.jpg" alt="蜜璃さんかくのビジュアル" />
                         <div class="card-content">
                             <h3>蜜璃 さんかく</h3>
                             <p>三角形の擬人化🔺</p>
                             <p><strong>配信ジャンル：</strong> 雑談、歌枠</p>
                             <p><strong>活動時間帯：</strong> 夜〜深夜</p>
-                            <a class="tiktok-link" href="https://www.tiktok.com/@mitsuri_sankaku" target="_blank">▶ TikTokで見る</a>
+                            <a class="tiktok-link" href="https://www.tiktok.com/@mitsuri_sankaku" target="_blank" rel="noopener noreferrer">▶ TikTokで見る</a>
                         </div>
                     </a>
                 </div>
@@ -76,10 +91,9 @@
 
     <footer>
         <p>当サイトは非公式ファンサイトであり、所属事務所およびご本人とは一切関係ありません。</p>
-        <p><a href="https://forms.gle/UV8Wmsa9LaXkXZTA6" target="_blank">サイトの情報修正・追加はこちらから</a></p>
+        <p><a href="https://forms.gle/UV8Wmsa9LaXkXZTA6" target="_blank" rel="noopener noreferrer">サイトの情報修正・追加はこちらから</a></p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
-
-
