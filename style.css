@@ -400,20 +400,20 @@ nav ul li a:hover {
 
 .tiktok-intro h2 {
     font-size: 2rem;
-    margin-bottom: 0;
+    margin: 0 0 1.5rem;
     color: var(--accent-color);
 }
 
 .tiktok-intro p {
-    margin: 0;
-    line-height: 1.6;
+    margin: 1rem 0;
+    line-height: 1.8;
     font-size: 1rem;
     color: var(--text-color);
 }
 
 .tiktok-intro .button {
     display: inline-block;
-    margin-top: 0;
+    margin-top: 2rem;
     padding: 0.75rem 1.5rem;
     background-color: #d76aa6;
     color: #fff;
@@ -543,6 +543,7 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
 
 
 
