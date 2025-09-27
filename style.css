@@ -1,4 +1,4 @@
-/* style.css (最終版) */
+/* style.css (変更後の全コード) */
 
 /* === 基本設定：白テーマ用のカラー設定 === */
 :root {
@@ -418,6 +418,10 @@ nav ul li a:hover {
     .tiktok-intro h2 {
         font-size: 1.6rem;
     }
+
+    .tiktok-intro p {
+        font-size: 0.9rem;
+    }
 }
 
 /* ===== アニメーションの定義 ===== */
@@ -468,25 +472,3 @@ nav ul li a:hover {
   margin: 0 auto;
   padding: 0 1rem;
 }
-
-/* レスポンシブ補正（文字サイズなど調整） */
-@media (max-width: 768px) {
-  .tiktok-intro {
-    padding: 2rem 1rem;
-  }
-  .tiktok-intro h2 {
-    font-size: 1.6rem;
-  }
-  .tiktok-intro p {
-    font-size: 0.9rem;
-  }
-}
-
-
-
-
-
-
-
-
-
