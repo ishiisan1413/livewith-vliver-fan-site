@@ -41,3 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // 10秒ごとに画像を自動で切り替える
     setInterval(nextImage, 10000); // 10000ミリ秒 = 10秒
 });
+
+// ===== スクロールアニメーション：.visible を付与 =====
+document.addEventListener('DOMContentLoaded', function () {
+  const animItems = document.querySelectorAll('.animate');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  animItems.forEach(item => {
+    observer.observe(item);
+  });
+});
+
