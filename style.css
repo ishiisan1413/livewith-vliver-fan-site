@@ -312,6 +312,116 @@ footer {
     }
 }
 
+/* === ナビゲーションバー === */
+nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 60px; /* header固定なのでその下に */
+    z-index: 90;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    font-weight: 700;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff69b4;
+}
+
+/* === TikTok Liveとは？セクション === */
+.tiktok-intro {
+    background-color: #fef7ff;
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 960px;
+    margin: 4rem auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.tiktok-intro h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.tiktok-intro p {
+    margin: 0.8em 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.tiktok-intro .button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff69b4;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tiktok-intro .button:hover {
+    background-color: #e058a7;
+}
+
+/* === TikTokリンクボタン（ライバーカード内） === */
+.tiktok-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff69b4;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.tiktok-link:hover {
+    background-color: #e058a7;
+}
+
+/* === モバイル対応追加（ナビゲーションと.tiktok-intro） === */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .tiktok-intro {
+        padding: 2rem 1rem;
+        margin: 2rem 1rem;
+    }
+
+    .tiktok-intro h2 {
+        font-size: 1.6rem;
+    }
+}
+
+
+
 
 
 
