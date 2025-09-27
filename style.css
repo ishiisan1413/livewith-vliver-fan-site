@@ -420,6 +420,70 @@ nav ul li a:hover {
     }
 }
 
+/* ===== アニメーションの定義 ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 共通 animate クラス */
+.animate {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+/* スクロールで視認範囲に来たらアニメーション発動 */
+.animate.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 個別アニメーション指定 */
+.fade-in { animation: fadeIn 0.8s forwards; }
+.fade-up { animation: fadeUp 0.8s forwards; }
+.pop-in { animation: popIn 0.5s forwards; }
+
+/* 遅延クラス */
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+
+/* あなたの既存 TikTokセクションのスタイルは維持 */
+/* ただし、内部 .intro-inner を中央寄せに調整 */
+.tiktok-intro .intro-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* レスポンシブ補正（文字サイズなど調整） */
+@media (max-width: 768px) {
+  .tiktok-intro {
+    padding: 2rem 1rem;
+  }
+  .tiktok-intro h2 {
+    font-size: 1.6rem;
+  }
+  .tiktok-intro p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
 
 
 
