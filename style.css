@@ -57,36 +57,46 @@ main {
 
 /* === TOPページ：ヒーローセクション === */
 .hero {
-    height: 30vh !important; /* インラインのスタイルを上書きしたい場合 */
+    height: 30vh !important; /* インラインのスタイルを上書き */
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: linear-gradient(135deg, #56A3D8 0%, #3B78D8 100%);
+    color: white;
+    /* 画面幅によっては高さ調整 */
+    min-height: 180px;
 }
-.hero-content h2 {
-    font-size: 3rem;
-    margin: 0;
-    color: #fff;
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content p.hero-subtitle {
+    font-size: 1.8rem;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0 0 1.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-/* 変更：.hero-title クラスでデザインを差し替え */
-.hero-title {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  font-weight: 700;
-  font-size: 2.8rem;
-  color: #3a86ff;
-  text-shadow: 1px 1px 2px rgba(58,134,255,0.5);
-  letter-spacing: 0.05em;
-  font-style: italic;
-}
-.hero-content p {
+
+/* CTAボタン */
+.cta-button {
+    background-color: #ff69b4;
+    color: white;
+    padding: 0.9rem 2.5rem;
+    font-weight: 700;
     font-size: 1.1rem;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #e058a7;
 }
 
 /* === Vライバー一覧セクション === */
@@ -288,131 +298,7 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
-
 /* === レスポンシブデザインの調整 === */
-@media (max-width: 768px) {
-    .liver-profile {
-        /* スマートフォンでは縦並びにする */
-        flex-direction: column;
-        gap: 2rem; 
-        padding: 1rem; 
-    }
-    .liver-visual, .liver-details {
-        width: 100%;
-        margin-bottom: 0;
-    }
-    .image-gallery {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 10px;
-        /* スマートフォンでは幅の制限を解除 */
-        max-width: 100%;
-    }
-    .thumbnails {
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-height: unset;
-        width: 100%;
-        justify-content: center;
-        padding-right: 0;
-    }
-    #main-image {
-        max-width: 100%;
-    }
-}
-
-/* === ナビゲーションバー === */
-nav {
-    background-color: #ffffff;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 60px; /* header固定なのでその下に */
-    z-index: 90;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0.5rem 0;
-}
-
-nav ul li {
-    margin: 0 1.5rem;
-}
-
-nav ul li a {
-    font-weight: 700;
-    color: var(--accent-color);
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ff69b4;
-}
-
-/* === TikTok Liveとは？セクション === */
-.tiktok-intro {
-    background-color: #fef7ff;
-    padding: 3rem 2rem;
-    text-align: center;
-    max-width: 960px;
-    margin: 4rem auto;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-}
-
-.tiktok-intro h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
-}
-
-.tiktok-intro p {
-    margin: 0.8em 0;
-    line-height: 1.6;
-    font-size: 1rem;
-    color: var(--text-color);
-}
-
-.tiktok-intro .button {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #ff69b4;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.tiktok-intro .button:hover {
-    background-color: #e058a7;
-}
-
-/* === TikTokリンクボタン（ライバーカード内） === */
-.tiktok-link {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #ff69b4;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.2s ease;
-}
-
-.tiktok-link:hover {
-    background-color: #e058a7;
-}
-
-/* === モバイル対応追加（ナビゲーションと.tiktok-intro） === */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -482,6 +368,7 @@ nav ul li a:hover {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 
 
 
