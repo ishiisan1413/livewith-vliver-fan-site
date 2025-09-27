@@ -50,7 +50,7 @@ header .unofficial-notice {
 }
 
 main {
-    padding-top: 64px; /* ヘッダーの高さに合わせて調整 */
+    padding-top: 80px; /* ヘッダーの高さに合わせて調整 */
 }
 
 /* === TOPページ：ヒーローセクション === */
@@ -343,19 +343,15 @@ footer {
 
 /* === ナビゲーションバー === */
 nav {
-    background-color: #ffffff;
-    border-bottom: 1px solid var(--border-color);
     position: sticky;
-    top: 60px;
+    top: 64px; /* ヘッダーの高さに合わせて調整 */
     z-index: 90;
+    background-color: #ffffff; /* navが背景透過で見えづらくならないように */
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0.5rem 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 nav ul li {
@@ -529,6 +525,7 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
 
 
 
