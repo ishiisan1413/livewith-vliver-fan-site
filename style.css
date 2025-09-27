@@ -1,13 +1,13 @@
-/* style.css (変更後の全コード) */
+/* style.css (優しい色合い・控えめヒーローテキスト調整版) */
 
 /* === 基本設定：白テーマ用のカラー設定 === */
 :root {
-    --accent-color: #56A3D8; /* アクセントカラー（爽やかな水色） */
-    --background-color: #F8FBFF; /* 背景色（真っ白より少し柔らかい白） */
-    --card-color: #FFFFFF; /* カードなどの背景色 */
-    --text-color: #333333; /* 基本の文字色（濃いグレー） */
-    --text-muted-color: #777777; /* 少し薄い文字色 */
-    --border-color: #EAEFF4; /* 境界線の色 */
+    --accent-color: #7AAFE3; /* 柔らかい水色に調整 */
+    --background-color: #FAFBFD; /* ほぼ白だけど少し温かみのある白 */
+    --card-color: #FFFFFF; /* カード背景は真っ白 */
+    --text-color: #444444; /* 基本文字色：少し薄めの濃いグレー */
+    --text-muted-color: #888888; /* 薄めのグレー */
+    --border-color: #E3E9F2; /* 優しい淡い境界線 */
 }
 
 body {
@@ -29,7 +29,7 @@ img {
 
 /* === ヘッダー === */
 header {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     text-align: center;
@@ -47,7 +47,7 @@ header h1 {
 }
 header .unofficial-notice {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted-color);
 }
 
@@ -57,46 +57,39 @@ main {
 
 /* === TOPページ：ヒーローセクション === */
 .hero {
-    height: 30vh !important; /* インラインのスタイルを上書き */
+    height: 30vh !important;
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #56A3D8 0%, #3B78D8 100%);
-    color: white;
-    /* 画面幅によっては高さ調整 */
-    min-height: 180px;
 }
 
-.hero-content {
-    max-width: 600px;
+.hero-content h2 {
+    font-size: 2rem; /* 小さめに調整 */
+    margin: 0;
+    color: #ffffffcc; /* 白の半透明 */
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
 }
 
-.hero-content p.hero-subtitle {
-    font-size: 1.8rem;
+.hero-title {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     font-weight: 700;
-    margin: 0 0 1.5rem 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+    color: #6699cc; /* 柔らかい水色 */
+    text-shadow: 1px 1px 3px rgba(102, 153, 204, 0.5);
+    letter-spacing: 0.04em;
+    font-style: italic;
 }
 
-/* CTAボタン */
-.cta-button {
-    background-color: #ff69b4;
-    color: white;
-    padding: 0.9rem 2.5rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
-    transition: background-color 0.3s ease;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.cta-button:hover {
-    background-color: #e058a7;
+.hero-content p {
+    font-size: 1rem;
+    color: #ffffffcc;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 /* === Vライバー一覧セクション === */
@@ -105,18 +98,21 @@ main {
     margin: 4rem auto;
     padding: 0 2rem;
 }
+
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: var(--accent-color);
     margin-bottom: 3rem;
 }
+
 .liver-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
 }
+
 .liver-card {
     width: 280px;
     background: var(--card-color);
@@ -124,25 +120,31 @@ main {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
+
 .liver-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(86, 163, 216, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(122, 175, 227, 0.15);
 }
+
 .liver-card img {
     width: 100%;
     height: auto;
-    aspect-ratio: 3/4;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
 }
+
 .card-content {
     padding: 1.5rem;
 }
+
 .card-content h3 {
     margin: 0 0 0.5rem 0;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    color: var(--text-color);
 }
+
 .card-content p {
     margin: 0;
     font-size: 0.9rem;
@@ -152,33 +154,29 @@ main {
 /* === Vライバー個別ページ === */
 .liver-profile {
     display: flex;
-    gap: 3rem; 
+    gap: 3rem;
     max-width: 1000px;
     margin: 4rem auto;
     padding: 2rem;
     background-color: var(--card-color);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     border: 1px solid var(--border-color);
 }
 
 .liver-visual {
-    /* 画像セクションの幅を固定 */
-    flex: 0 0 45%; 
-    margin-bottom: 0; 
+    flex: 0 0 45%;
+    margin-bottom: 0;
 }
 
-/* 画像ギャラリーの配置を調整 */
 .image-gallery {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 15px;
-    /* このコンテナの幅を80%に制限 */
-    max-width: 80%; 
+    max-width: 80%;
 }
 
-/* サムネイルのコンテナ */
 .thumbnails {
     display: flex;
     flex-direction: column;
@@ -190,7 +188,6 @@ main {
     flex-shrink: 0;
 }
 
-/* 丸いサムネイルのスタイル */
 .thumbnail {
     width: 40px;
     height: 40px;
@@ -202,25 +199,23 @@ main {
     flex-shrink: 0;
 }
 
-/* アクティブなサムネイルのスタイル */
 .thumbnail.active {
-    border-color: #ff69b4;
+    border-color: #d76aa6;
     transform: scale(1.1);
 }
 
-/* メイン画像のスタイル */
 #main-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transition: opacity 0.5s ease-in-out;
 }
 
 .liver-details {
-    /* テキストセクションが残りのスペースを埋める */
-    flex: 1 1 55%; 
+    flex: 1 1 55%;
 }
+
 .liver-details h2 {
     font-size: 2rem;
     color: var(--accent-color);
@@ -228,77 +223,211 @@ main {
     margin-bottom: 0;
     padding-bottom: 0.2rem;
 }
+
 .liver-details h3 {
-    font-size: 1.0rem;
+    font-size: 1rem;
     color: var(--accent-color);
     margin-top: 0;
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 1rem;
 }
+
 .self-intro {
-    background-color: #ffeaea; /* 薄いピンクの背景色 */
-    border: 1px solid #ff69b4; /* 濃いピンクの枠線 */
-    color: #ff69b4; /* テキスト色を濃いピンクに */
+    background-color: #ffeaea;
+    border: 1px solid #d76aa6;
+    color: #d76aa6;
     padding: 0.5rem 1rem;
-    border-radius: 8px; /* 角丸にする */
-    display: inline-block; /* インラインブロック要素に */
+    border-radius: 8px;
+    display: inline-block;
     font-weight: 700;
     margin-bottom: 1rem;
 }
+
 .profile-table {
     width: 100%;
     margin-top: 2rem;
     border-collapse: collapse;
 }
-.profile-table th, .profile-table td {
+
+.profile-table th,
+.profile-table td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
 }
+
 .profile-table th {
     color: var(--text-muted-color);
     width: 30%;
 }
+
 .social-links {
     margin-top: 2rem;
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
+
 .social-links a {
     padding: 0.8rem 1.5rem;
-    border-radius: 8px; /* 角丸を調整 */
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: 700;
     transition: transform 0.2s ease;
     color: #fff;
-    display: flex; /* アイコンとテキストを横並びにするため */
-    align-items: center; /* アイコンとテキストを垂直方向中央揃えにするため */
-    gap: 0.5rem; /* アイコンとテキストの間隔 */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
+
 .social-links a:hover {
     transform: scale(1.05);
 }
-.link-x { 
-    background-color: #000000; /* Xのブランドカラー（黒） */
-    color: #FFFFFF; /* テキストを白に */
-    border-radius: 9999px; /* 丸いボタンにする */
-    padding: 0.8rem 1.8rem; /* 左右のパディングを少し増やして調整 */
+
+.link-x {
+    background-color: #2c2c2c; /* 少し柔らかい黒 */
+    color: #FFFFFF;
+    border-radius: 9999px;
+    padding: 0.8rem 1.8rem;
 }
-/* .link-youtube はもしあれば追加 */
-.link-youtube { background-color: #FF0000; } 
+
+.link-youtube {
+    background-color: #ff4c4c; /* 柔らかい赤 */
+}
 
 /* === フッター === */
 footer {
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
-    font-size: 0.8rem; /* フォントサイズを小さくする */
-    color: var(--text-muted-color); /* 色を薄いグレーにする */
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
     border-top: 1px solid var(--border-color);
 }
 
 /* === レスポンシブデザインの調整 === */
+@media (max-width: 768px) {
+    .liver-profile {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    .liver-visual,
+    .liver-details {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        max-width: 100%;
+    }
+    .thumbnails {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: unset;
+        width: 100%;
+        justify-content: center;
+        padding-right: 0;
+    }
+    #main-image {
+        max-width: 100%;
+    }
+}
+
+/* === ナビゲーションバー === */
+nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 60px;
+    z-index: 90;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    font-weight: 700;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d76aa6;
+}
+
+/* === TikTok Liveとは？セクション === */
+.tiktok-intro {
+    background-color: #fcf9ff;
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 960px;
+    margin: 4rem auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.tiktok-intro h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.tiktok-intro p {
+    margin: 0.8em 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.tiktok-intro .button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #d76aa6;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tiktok-intro .button:hover {
+    background-color: #b55a88;
+}
+
+/* === TikTokリンクボタン（ライバーカード内） === */
+.tiktok-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #d76aa6;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.tiktok-link:hover {
+    background-color: #b55a88;
+}
+
+/* === モバイル対応追加（ナビゲーションと.tiktok-intro） === */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -322,55 +451,77 @@ footer {
 
 /* ===== アニメーションの定義 ===== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes popIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-/* 共通 animate クラス */
 .animate {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
 }
 
-/* スクロールで視認範囲に来たらアニメーション発動 */
 .animate.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-/* 個別アニメーション指定 */
-.fade-in { animation: fadeIn 0.8s forwards; }
-.fade-up { animation: fadeUp 0.8s forwards; }
-.pop-in { animation: popIn 0.5s forwards; }
+.fade-in {
+    animation: fadeIn 0.8s forwards;
+}
 
-/* 遅延クラス */
-.delay-1 { animation-delay: 0.3s; }
-.delay-2 { animation-delay: 0.6s; }
-.delay-3 { animation-delay: 0.9s; }
+.fade-up {
+    animation: fadeUp 0.8s forwards;
+}
 
-/* あなたの既存 TikTokセクションのスタイルは維持 */
-/* ただし、内部 .intro-inner を中央寄せに調整 */
+.pop-in {
+    animation: popIn 0.5s forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+.delay-3 {
+    animation-delay: 0.9s;
+}
+
 .tiktok-intro .intro-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
-
-
-
-
-
-
