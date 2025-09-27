@@ -2,12 +2,10 @@
 
 /* === 基本設定：白テーマ用のカラー設定 === */
 :root {
-    --accent-color: #7AAFE3; /* 柔らかい水色に調整 */
-    --background-color: #FAFBFD; /* ほぼ白だけど少し温かみのある白 */
-    --card-color: #FFFFFF; /* カード背景は真っ白 */
-    --text-color: #444444; /* 基本文字色：少し薄めの濃いグレー */
-    --text-muted-color: #888888; /* 薄めのグレー */
-    --border-color: #E3E9F2; /* 優しい淡い境界線 */
+    --background-color: #F9F9F9; /* 背景色（暖かみのある白） */
+    --accent-color: #A3C4D7; /* アクセントカラー（穏やかな青） */
+    --text-color: #333333; /* 基本の文字色（濃いグレー） */
+    --border-color: #E0E0E0; /* 境界線の色 */
 }
 
 body {
@@ -29,7 +27,7 @@ img {
 
 /* === ヘッダー === */
 header {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     text-align: center;
@@ -57,7 +55,7 @@ main {
 
 /* === TOPページ：ヒーローセクション === */
 .hero {
-    height: 30vh !important;
+    height: 30vh;
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
@@ -65,6 +63,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
 }
 
 .hero-content h2 {
@@ -114,13 +113,12 @@ main {
 }
 
 .liver-card {
-    width: 280px;
-    background: var(--card-color);
+    background: #FFFFFF;
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .liver-card:hover {
@@ -307,6 +305,12 @@ footer {
 
 /* === レスポンシブデザインの調整 === */
 @media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+    }
     .liver-profile {
         flex-direction: column;
         gap: 2rem;
@@ -525,3 +529,4 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
