@@ -50,7 +50,7 @@ header .unofficial-notice {
 }
 
 main {
-    padding-top: 80px;
+    padding-top: 64px; /* ヘッダーの高さに合わせて調整 */
 }
 
 /* === TOPページ：ヒーローセクション === */
@@ -529,5 +529,6 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
 
 
