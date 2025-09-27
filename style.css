@@ -73,6 +73,17 @@ main {
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+/* 変更：.hero-title クラスでデザインを差し替え */
+.hero-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    color: #ff4c60;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 0.5rem;
+}
 .hero-content p {
     font-size: 1.1rem;
     color: #fff;
@@ -472,6 +483,7 @@ nav ul li a:hover {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 
 
 
