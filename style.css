@@ -57,14 +57,14 @@ main {
 
 /* === TOPページ：ヒーローセクション === */
 .hero {
-    height: 20vh;
+    height: 30vh !important; /* インラインのスタイルを上書きしたい場合 */
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: linear-gradient(to right, rgba(135, 206, 235, 0.8), rgba(86, 163, 216, 0.8)), url('https://placehold.jp/1200x600.png?text=Fan+Site');
-    background-size: cover;
-    background-position: center;
 }
 .hero-content h2 {
     font-size: 3rem;
@@ -472,5 +472,6 @@ nav ul li a:hover {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 
 
