@@ -91,6 +91,10 @@ main {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
+section[id] {
+    scroll-margin-top: 100px;
+}
+
 /* === Vライバー一覧セクション === */
 .liver-section {
     max-width: 1200px;
@@ -525,6 +529,7 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
 
 
 
