@@ -57,7 +57,7 @@ main {
 
 /* === TOPページ：ヒーローセクション === */
 .hero {
-    height: 60vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -472,3 +472,4 @@ nav ul li a:hover {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
