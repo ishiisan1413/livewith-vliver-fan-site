@@ -348,7 +348,7 @@ footer {
 /* === ナビゲーションバー === */
 nav {
     position: sticky;
-    top: 64px;
+    top: 80px;
     z-index: 90;
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -543,6 +543,7 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
 
 
 
