@@ -58,7 +58,7 @@ main {
     position: relative;
     overflow: hidden;
     height: 15vh;
-    min-height: 300px;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -630,6 +630,7 @@ nav ul li a:hover {
     max-width: 100%;
   }
 }
+
 
 
 
