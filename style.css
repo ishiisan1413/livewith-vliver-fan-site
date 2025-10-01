@@ -428,6 +428,7 @@ nav ul li a:hover {
 
 .hero.with-video .hero-subtitle {
   font-size: 1.8rem;
+  font-weight: 700;
   line-height: 1.5;
   color: #88C4FF;
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
@@ -630,6 +631,7 @@ nav ul li a:hover {
     max-width: 100%;
   }
 }
+
 
 
 
