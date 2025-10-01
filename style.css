@@ -170,7 +170,6 @@ section[id] {
 .liver-card img {
     width: 100%;
     height: auto;
-    aspect-ratio: 3 / 4;
     object-fit: cover;
 }
 
@@ -632,6 +631,7 @@ nav ul li a:hover {
     max-width: 100%;
   }
 }
+
 
 
 
