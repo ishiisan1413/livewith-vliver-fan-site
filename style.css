@@ -569,11 +569,16 @@ nav ul li a:hover {
     font-size: 2rem;
   }
 
-  /* ナビゲーション */
   nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    flex-direction: row; /* 横並びを維持 */
+    flex-wrap: wrap;     /* はみ出す場合は折り返し */
+    justify-content: center;
+    gap: 0.5rem;          /* 間隔を少し狭める */
+  }
+
+  nav ul li a {
+    padding: 0.3rem 0.8rem; /* ボタンサイズを小さく */
+    font-size: 0.8rem;       /* フォントを小さめに */
   }
 
   /* TikTok紹介セクション */
@@ -625,4 +630,5 @@ nav ul li a:hover {
     max-width: 100%;
   }
 }
+
 
