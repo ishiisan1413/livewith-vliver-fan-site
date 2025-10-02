@@ -124,7 +124,7 @@ main {
 
 .hero-content p {
     font-size: 1rem;
-    color: #ffffffcc;
+    color: #333333;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
@@ -631,6 +631,7 @@ nav ul li a:hover {
     max-width: 100%;
   }
 }
+
 
 
 
